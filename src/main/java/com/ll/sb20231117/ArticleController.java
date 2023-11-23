@@ -15,7 +15,7 @@ public class ArticleController
         return "article/write";
     }
 
-    @GetMapping("/article/dowrite")
+    @GetMapping("/article/doWrite")
     @ResponseBody
     Article doWrite(
             String title,
