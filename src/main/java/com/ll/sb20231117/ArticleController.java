@@ -21,9 +21,9 @@ public class ArticleController
         return "article/write";
     }
 
-    @PostMapping("/article/doWrite")
+    @PostMapping("/article/write")
     @ResponseBody
-    RsData doWrite(
+    RsData write(
             String title,
             String body
     )
