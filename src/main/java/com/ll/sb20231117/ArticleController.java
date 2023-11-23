@@ -21,19 +21,23 @@ public class ArticleController
 
     @GetMapping("/article/doWrite")
     @ResponseBody
-    Map<String, Object> doWrite(
+    RsData doWrite(
             String title,
             String body
     )
     {
-        Article article = new Article(articles.size()+1, title, body);
-
-        Map<String, Object> rs = new LinkedHashMap<>();
-        rs.put("resultCode", "S-1");
-        rs.put("msg", "%d번 게시물이 작성되었습니다.".formatted(article.getId()));
-        rs.put("data", article);
-
+        Article article = new Article(articles.size() + 1, title, body);
         articles.add(article);
+
+        RsData rs = new RsData(
+                "S-1",
+                "%d번 게시물이 작성되었습니다.".formatted(article.getId()),
+                article
+        );
+
+        String resultCode = rs.getResultCode();
+        String msg = rs.getMsg();
+        Article _article = (Article) rs.getData();
 
         return rs;
     }
@@ -51,6 +55,17 @@ public class ArticleController
     {
         return articles;
     }
+
+}
+
+
+@AllArgsConstructor
+@Getter
+class RsData
+{
+    private String resultCode;
+    private String msg;
+    private Object data;
 
 }
 
