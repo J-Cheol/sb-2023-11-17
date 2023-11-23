@@ -2,6 +2,7 @@ package com.ll.sb20231117;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class ArticleController
@@ -11,5 +12,16 @@ public class ArticleController
     {
         return "article/write";
     }
+
+    @GetMapping("/article/dowrite")
+    @ResponseBody
+    String doWrite(
+            String title,
+            String body
+    )
+    {
+        return "게시물이 작성되었습니다.";
+    }
+
 }
 
