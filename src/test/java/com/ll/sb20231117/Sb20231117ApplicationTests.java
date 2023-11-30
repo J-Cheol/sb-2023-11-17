@@ -10,6 +10,7 @@ class Sb20231117ApplicationTests
     @Test
     void contextLoads()
     {
+        int i = 0;
     }
 
 }
