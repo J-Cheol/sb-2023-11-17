@@ -20,4 +20,11 @@ class Sb20231117ApplicationTests
     {
         String test1;
     }
+
+    @Test
+    @DisplayName("t3")
+    void t3()
+    {
+        String test3;
+    }
 }
