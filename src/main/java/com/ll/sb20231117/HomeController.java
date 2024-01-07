@@ -268,6 +268,15 @@ public class HomeController
 
         return num;
     }
+
+    @GetMapping("/calc24")
+    @ResponseBody
+    int showCalc24()
+    {
+        num++;
+
+        return num;
+    }
 }
 
 @AllArgsConstructor
