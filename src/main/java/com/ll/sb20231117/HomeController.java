@@ -277,6 +277,16 @@ public class HomeController
 
         return num;
     }
+
+    @GetMapping("/calc25")
+    @ResponseBody
+    String showCalc25(Model model)
+    {
+        model.addAttribute("v1", "안녕");
+        model.addAttribute("v2", "반가워");
+
+        return "calc25";
+    }
 }
 
 @AllArgsConstructor
